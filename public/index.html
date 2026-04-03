@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URI Off-Campus Rentals | 5-Bedroom House Near Campus</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'uri-blue': '#002654',
+            'uri-light': '#0057B8',
+            'uri-gold': '#C4A35A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-overlay { background: linear-gradient(to bottom, rgba(0,38,84,0.7) 0%, rgba(0,38,84,0.4) 50%, rgba(0,38,84,0.8) 100%); }
+    .room-card:hover .room-img { transform: scale(1.05); }
+    .gallery-img:hover { transform: scale(1.08); }
+    .gallery-img { transition: transform 0.4s ease; }
+    .room-img { transition: transform 0.4s ease; }
+    .nav-link { position: relative; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #C4A35A; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-800">
+
+  <!-- NAVIGATION -->
+  <nav class="fixed top-0 w-full z-50 bg-uri-blue/95 backdrop-blur-sm shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-uri-gold rounded-full flex items-center justify-center font-bold text-uri-blue text-sm">URI</div>
+        <span class="text-white font-semibold text-lg tracking-tight">Wakefield Off-Campus</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#rooms" class="nav-link text-white/80 hover:text-white transition">Rooms</a>
+        <a href="#amenities" class="nav-link text-white/80 hover:text-white transition">Amenities</a>
+        <a href="#location" class="nav-link text-white/80 hover:text-white transition">Location</a>
+        <a href="#gallery" class="nav-link text-white/80 hover:text-white transition">Gallery</a>
+        <a href="#contact" class="nav-link text-white/80 hover:text-white transition">Contact</a>
+        <a href="#contact" class="bg-uri-gold text-uri-blue font-semibold px-5 py-2 rounded-full hover:bg-yellow-400 transition text-sm">Schedule Tour</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <img
+      src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1600&q=80"
+      alt="Beautiful house exterior"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 bg-uri-gold text-uri-blue font-bold text-sm px-5 py-2 rounded-full mb-6 shadow-lg">
+        <span class="w-2 h-2 bg-uri-blue rounded-full animate-pulse"></span>
+        Now Leasing 2026–2027
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight">
+        Your Home<br/><span class="text-uri-gold">Near URI</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-white/80 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
+        Spacious 5-bedroom house in Wakefield, just 10 minutes from URI campus — fully furnished common areas, free parking, and all utilities included.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#rooms" class="bg-uri-gold text-uri-blue font-bold px-8 py-4 rounded-full text-lg hover:bg-yellow-400 transition shadow-xl">
+          View Rooms &amp; Pricing
+        </a>
+        <a href="#contact" class="border-2 border-white text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white hover:text-uri-blue transition">
+          Schedule a Tour
+        </a>
+      </div>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="bg-uri-blue py-6">
+    <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+      <div>
+        <div class="text-4xl font-black text-uri-gold">5</div>
+        <div class="text-sm font-medium text-white/70 mt-1 uppercase tracking-wider">Bedrooms</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black text-uri-gold">10<span class="text-2xl">min</span></div>
+        <div class="text-sm font-medium text-white/70 mt-1 uppercase tracking-wider">To Campus</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black text-uri-gold">3</div>
+        <div class="text-sm font-medium text-white/70 mt-1 uppercase tracking-wider">Room Sizes</div>
+      </div>
+      <div>
+        <div class="text-4xl font-black text-uri-gold">Free</div>
+        <div class="text-sm font-medium text-white/70 mt-1 uppercase tracking-wider">Parking</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section id="rooms" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-light font-semibold uppercase tracking-widest text-sm mb-3">Available for Fall 2026</p>
+        <h2 class="text-4xl md:text-5xl font-black text-uri-blue mb-4">Choose Your Room</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">All rooms include high-speed WiFi, heating/cooling, and access to all shared spaces.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Room 1 - Large -->
+        <div class="room-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+          <div class="overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=80" alt="Large Room A" class="room-img w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-uri-blue/10 text-uri-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Large</span>
+              <span class="text-uri-gold font-black text-2xl">$750<span class="text-gray-400 font-normal text-sm">/mo</span></span>
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mb-1">Room A — Master</h3>
+            <p class="text-gray-500 text-sm mb-4">~180 sq ft · East-facing · Double windows</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-5">
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Queen bed frame included</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Large closet with built-ins</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Dedicated desk area</li>
+            </ul>
+            <a href="#contact" class="block w-full text-center bg-uri-blue text-white font-semibold py-3 rounded-xl hover:bg-uri-light transition text-sm">Claim This Room</a>
+          </div>
+        </div>
+
+        <!-- Room 2 - Large -->
+        <div class="room-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+          <div class="overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=600&q=80" alt="Large Room B" class="room-img w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-uri-blue/10 text-uri-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Large</span>
+              <span class="text-uri-gold font-black text-2xl">$725<span class="text-gray-400 font-normal text-sm">/mo</span></span>
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mb-1">Room B — Corner Suite</h3>
+            <p class="text-gray-500 text-sm mb-4">~170 sq ft · Corner unit · Backyard view</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-5">
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Queen bed frame included</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Walk-in closet space</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Extra natural light</li>
+            </ul>
+            <a href="#contact" class="block w-full text-center bg-uri-blue text-white font-semibold py-3 rounded-xl hover:bg-uri-light transition text-sm">Claim This Room</a>
+          </div>
+        </div>
+
+        <!-- Room 3 - Medium -->
+        <div class="room-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+          <div class="overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80" alt="Medium Room C" class="room-img w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-uri-light/10 text-uri-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Medium</span>
+              <span class="text-uri-gold font-black text-2xl">$650<span class="text-gray-400 font-normal text-sm">/mo</span></span>
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mb-1">Room C — Standard Plus</h3>
+            <p class="text-gray-500 text-sm mb-4">~140 sq ft · Full-size bed · Street view</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-5">
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Full bed frame included</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Standard closet</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Desk + shelving</li>
+            </ul>
+            <a href="#contact" class="block w-full text-center bg-uri-blue text-white font-semibold py-3 rounded-xl hover:bg-uri-light transition text-sm">Claim This Room</a>
+          </div>
+        </div>
+
+        <!-- Room 4 - Medium -->
+        <div class="room-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+          <div class="overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Medium Room D" class="room-img w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-uri-light/10 text-uri-light text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Medium</span>
+              <span class="text-uri-gold font-black text-2xl">$625<span class="text-gray-400 font-normal text-sm">/mo</span></span>
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mb-1">Room D — Standard</h3>
+            <p class="text-gray-500 text-sm mb-4">~135 sq ft · Full-size bed · Quiet side</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-5">
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Full bed frame included</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Deep closet</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Compact desk setup</li>
+            </ul>
+            <a href="#contact" class="block w-full text-center bg-uri-blue text-white font-semibold py-3 rounded-xl hover:bg-uri-light transition text-sm">Claim This Room</a>
+          </div>
+        </div>
+
+        <!-- Room 5 - Small -->
+        <div class="room-card bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100 md:col-span-2 lg:col-span-1">
+          <div class="overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Small Room E" class="room-img w-full h-full object-cover" />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Best Value</span>
+              <span class="text-uri-gold font-black text-2xl">$525<span class="text-gray-400 font-normal text-sm">/mo</span></span>
+            </div>
+            <h3 class="font-bold text-xl text-gray-800 mb-1">Room E — Cozy Single</h3>
+            <p class="text-gray-500 text-sm mb-4">~110 sq ft · Twin bed · Perfect for minimalists</p>
+            <ul class="text-sm text-gray-600 space-y-1 mb-5">
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Twin bed frame included</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Loft-style storage</li>
+              <li class="flex items-center gap-2"><span class="text-uri-gold">✓</span> Built-in desk nook</li>
+            </ul>
+            <a href="#contact" class="block w-full text-center bg-uri-blue text-white font-semibold py-3 rounded-xl hover:bg-uri-light transition text-sm">Claim This Room</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Banner -->
+      <div class="mt-14 bg-uri-blue rounded-2xl p-8 text-center text-white">
+        <p class="text-uri-gold font-bold uppercase tracking-widest text-sm mb-2">Limited Availability</p>
+        <h3 class="text-2xl font-black mb-3">Ready to lock in your room for Fall 2026?</h3>
+        <p class="text-white/70 mb-6">Rooms go fast — schedule a tour today before they're gone.</p>
+        <a href="#contact" class="inline-block bg-uri-gold text-uri-blue font-bold px-8 py-3 rounded-full hover:bg-yellow-400 transition">Schedule a Tour Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-light font-semibold uppercase tracking-widest text-sm mb-3">What's Included</p>
+        <h2 class="text-4xl md:text-5xl font-black text-uri-blue mb-4">Everything You Need</h2>
+        <p class="text-gray-500 text-lg max-w-xl mx-auto">All utilities, WiFi, and amenities are included in your monthly rent. No surprises.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">📶</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">High-Speed WiFi</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Gigabit fiber included</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🫧</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">In-Unit Laundry</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Washer &amp; dryer</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🍳</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">Full Kitchen</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Fully equipped</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🚗</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">Free Parking</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Driveway + street</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🌿</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">Private Backyard</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Patio &amp; green space</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🛋️</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">Furnished Common Areas</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Living &amp; dining rooms</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">🚿</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">2 Full Bathrooms</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Never wait in line</p>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-gray-50 hover:bg-uri-blue hover:text-white transition-all duration-300 group">
+          <div class="text-4xl mb-3">❄️</div>
+          <h4 class="font-bold text-gray-800 group-hover:text-white">Central HVAC</h4>
+          <p class="text-sm text-gray-500 group-hover:text-white/70 mt-1">Heat &amp; A/C included</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location" class="py-24 bg-uri-blue text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-gold font-semibold uppercase tracking-widest text-sm mb-3">Where We Are</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Prime Wakefield Location</h2>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">Located in Wakefield, RI — steps from everything you need: campus, beaches, food, and transit.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+          <span class="text-3xl shrink-0">🎓</span>
+          <div>
+            <h4 class="font-bold text-lg text-uri-gold">URI Main Campus</h4>
+            <p class="text-white/70 text-sm mt-1">~10 minute walk or bike ride to the Quad, library, and dining halls on URI's main campus.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+          <span class="text-3xl shrink-0">🚌</span>
+          <div>
+            <h4 class="font-bold text-lg text-uri-gold">RIPTA Bus Stop</h4>
+            <p class="text-white/70 text-sm mt-1">RIPTA Route 66 bus stop just 2 blocks away — easy connections to Providence and South County.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+          <span class="text-3xl shrink-0">🏖️</span>
+          <div>
+            <h4 class="font-bold text-lg text-uri-gold">Narragansett Beach</h4>
+            <p class="text-white/70 text-sm mt-1">Just 10 minutes by car to Narragansett Town Beach — perfect for summers and weekend trips.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+          <span class="text-3xl shrink-0">🛒</span>
+          <div>
+            <h4 class="font-bold text-lg text-uri-gold">Grocery &amp; Shopping</h4>
+            <p class="text-white/70 text-sm mt-1">Stop &amp; Shop, Market Basket, and Target all within 5 minutes. Everything you need, close by.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-5 p-6 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition md:col-span-2 md:max-w-md md:mx-auto">
+          <span class="text-3xl shrink-0">🍕</span>
+          <div>
+            <h4 class="font-bold text-lg text-uri-gold">Restaurants &amp; Nightlife</h4>
+            <p class="text-white/70 text-sm mt-1">Mama Mia's, The Mews, Bru Coffeehouse and tons more within walking distance on Lower College Road.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section id="gallery" class="py-24 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-light font-semibold uppercase tracking-widest text-sm mb-3">Take a Look Inside</p>
+        <h2 class="text-4xl md:text-5xl font-black text-uri-blue mb-4">Photo Gallery</h2>
+        <p class="text-gray-500 text-lg">See why students love calling this place home.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=80" alt="Living room" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=700&q=80" alt="Kitchen" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=700&q=80" alt="Bedroom" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1599619351208-3e6c839d6828?w=700&q=80" alt="Backyard" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=700&q=80" alt="Bathroom" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+        <div class="overflow-hidden rounded-2xl h-56 md:h-64">
+          <img src="https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=700&q=80" alt="House exterior" class="gallery-img w-full h-full object-cover cursor-pointer" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-light font-semibold uppercase tracking-widest text-sm mb-3">What Tenants Say</p>
+        <h2 class="text-4xl md:text-5xl font-black text-uri-blue mb-4">Student Reviews</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition">
+          <div class="flex text-uri-gold text-xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">"Honestly the best housing decision I made at URI. The landlord is super responsive, the house is clean, and being 10 minutes from campus made my junior year so much less stressful."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-uri-blue rounded-full flex items-center justify-center text-white font-bold text-sm">AJ</div>
+            <div>
+              <div class="font-semibold text-gray-800">Alex J.</div>
+              <div class="text-sm text-gray-400">URI '25 · Business</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition">
+          <div class="flex text-uri-gold text-xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">"The backyard sold me. We had so many cookouts and hangouts freshman year. The WiFi is fast enough for Zoom and gaming, and the kitchen is huge. Renewing for senior year!"</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-uri-blue rounded-full flex items-center justify-center text-white font-bold text-sm">MR</div>
+            <div>
+              <div class="font-semibold text-gray-800">Maya R.</div>
+              <div class="text-sm text-gray-400">URI '26 · Nursing</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:shadow-md transition">
+          <div class="flex text-uri-gold text-xl mb-4">★★★★★</div>
+          <p class="text-gray-600 leading-relaxed mb-6">"Free parking was a game changer. Drove to campus every day for 9am labs. The room sizes are way bigger than dorms and the price is way better. Wish I'd found this sooner."</p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-uri-blue rounded-full flex items-center justify-center text-white font-bold text-sm">TK</div>
+            <div>
+              <div class="font-semibold text-gray-800">Tyler K.</div>
+              <div class="text-sm text-gray-400">URI '24 · Engineering</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-uri-blue text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-uri-gold font-semibold uppercase tracking-widest text-sm mb-3">Get In Touch</p>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Schedule a Tour</h2>
+        <p class="text-white/60 text-lg max-w-xl mx-auto">Rooms are first-come, first-served. Reach out today to set up a showing before your room is gone.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <a href="tel:+14015550100" class="flex flex-col items-center p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition text-center group">
+          <span class="text-4xl mb-4">📞</span>
+          <h4 class="font-bold text-lg text-uri-gold mb-1">Call or Text</h4>
+          <p class="text-white/70 text-sm">(401) 555-0100</p>
+          <p class="text-white/40 text-xs mt-2">Mon–Sun, 9am–8pm</p>
+        </a>
+        <a href="mailto:rentals@kingston-uri.com" class="flex flex-col items-center p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition text-center group">
+          <span class="text-4xl mb-4">✉️</span>
+          <h4 class="font-bold text-lg text-uri-gold mb-1">Email Us</h4>
+          <p class="text-white/70 text-sm">rentals@kingston-uri.com</p>
+          <p class="text-white/40 text-xs mt-2">We reply within 24 hours</p>
+        </a>
+        <a href="https://instagram.com/kingstonoffcampus" target="_blank" rel="noopener" class="flex flex-col items-center p-8 bg-white/5 rounded-2xl border border-white/10 hover:bg-white/10 transition text-center group">
+          <span class="text-4xl mb-4">📸</span>
+          <h4 class="font-bold text-lg text-uri-gold mb-1">Instagram</h4>
+          <p class="text-white/70 text-sm">@kingstonoffcampus</p>
+          <p class="text-white/40 text-xs mt-2">DMs open always</p>
+        </a>
+      </div>
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 bg-uri-gold text-uri-blue font-bold text-sm px-6 py-3 rounded-full shadow-lg">
+          <span class="w-2 h-2 bg-uri-blue rounded-full animate-pulse"></span>
+          Now Leasing 2026–2027 · Limited Rooms Available
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-uri-gold rounded-full flex items-center justify-center font-bold text-uri-blue text-xs">URI</div>
+        <span class="font-semibold">Wakefield Off-Campus Rentals</span>
+      </div>
+      <p class="text-gray-500 text-sm">Wakefield, RI · Near University of Rhode Island</p>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="#rooms" class="hover:text-white transition">Rooms</a>
+        <a href="#amenities" class="hover:text-white transition">Amenities</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-gray-600 text-xs">
+      &copy; 2026 Wakefield Off-Campus Rentals. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
